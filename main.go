@@ -15,8 +15,8 @@ func toRoman(x int) (string, error) {
 		return "", errors.New("ошибка: в римской системе нет отрицательных чисел")
 	}
 	conversions := []struct {
-		value int
-		latin string
+		Value int
+		Latin string
 	}{
 		{100, "C"},
 		{90, "XC"},
@@ -30,9 +30,9 @@ func toRoman(x int) (string, error) {
 	}
 	romanNumber := ""
 	for _, conversion := range conversions {
-		for x >= conversion.value {
-			romanNumber += conversion.latin
-			x -= conversion.value
+		for x >= conversion.Value {
+			romanNumber += conversion.Latin
+			x -= conversion.Value
 		}
 	}
 	return romanNumber, nil
