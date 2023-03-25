@@ -52,16 +52,10 @@ func fromRoman(y string) int {
 		"X":    10,
 	}
 
-	digitNumber := 0
-	for romanNumber := range romanNumbers {
-		if romanNumber == y {
-			digitNumber = romanNumbers[romanNumber]
-		}
-	}
-	if digitNumber == 0 {
+	if romanNumbers[y] == 0 {
 		panic("ошибка: введены некорректные данные")
 	}
-	return digitNumber
+	return romanNumbers[y]
 }
 
 func arithmetic(a, b int, c string) int {
