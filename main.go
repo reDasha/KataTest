@@ -12,7 +12,7 @@ import (
 
 func toRoman(x int) (string, error) {
 	if x <= 0 {
-		return "", errors.New("ошибка: в римской системе нет отрицательных чисел")
+		return "", errors.New("Ошибка: в римской системе нет отрицательных чисел")
 	}
 	conversions := []struct {
 		Value int
@@ -53,7 +53,7 @@ func fromRoman(y string) int {
 	}
 
 	if romanNumbers[y] == 0 {
-		panic("ошибка: введены некорректные данные")
+		panic("Ошибка: введены некорректные данные")
 	}
 	return romanNumbers[y]
 }
@@ -78,12 +78,12 @@ func main() {
 	for {
 		text, err := reader.ReadString('\n')
 		if err != nil {
-			panic("ошибка: введены некорректные данные")
+			panic("Ошибка: введены некорректные данные")
 		}
 		operation := strings.Split(strings.TrimSpace(text), " ")
 
 		if len(operation) != 3 || (operation[1] != "+" && operation[1] != "-" && operation[1] != "*" && operation[1] != "/") {
-			panic("ошибка: введены некорректные данные")
+			panic("Ошибка: введены некорректные данные")
 		}
 
 		x, _ := strconv.Atoi(operation[0])
@@ -108,7 +108,7 @@ func main() {
 				fmt.Println(res)
 			}
 		} else {
-			panic("ошибка: введены некорректные данные")
+			panic("Ошибка: введены некорректные данные")
 		}
 	}
 }
